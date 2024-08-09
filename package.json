@@ -4,12 +4,13 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon src/app.js"
+    "dev": "nodemon src/app.js",
+    "start": "node src/app.js"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["API", "Weather"],
+  "author": "Iqbal Ramadan",
   "license": "ISC",
-  "description": "",
+  "description": "This is a simple weather API wrapper",
   "dependencies": {
     "axios": "^1.7.3",
     "dotenv": "^16.4.5",
