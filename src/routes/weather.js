@@ -15,6 +15,7 @@ router.get("/", (req, res) => {
     history: "/history?q=city&date=YYYY-MM-DD",
     marine: "/marine?q=city",
     future: "/future?q=city",
+    airquality: "/airquality?q=city",
   });
 });
 
@@ -118,6 +119,28 @@ router.get("/future", async (req, res) => {
 
   try {
     const response = await axios.get(`${baseUrl}/forecast.json`, {
+      params: {
+        key: apiKey,
+        q: q,
+      },
+    });
+
+    res.json(response.data);
+  } catch (error) {
+    res.status(500).json({ message: "Internal server error" });
+  }
+});
+
+// Air Quality endpoint
+router.get("/airquality", async (req, res) => {
+  const { q } = req.query;
+
+  if (!q) {
+    return res.status(400).json({ message: "Query is required" });
+  }
+
+  try {
+    const response = await axios.get(`${baseUrl}/airquality.json`, {
       params: {
         key: apiKey,
         q: q,
