@@ -6,7 +6,7 @@ Weather API Wrapper is an application built with Node.js and Express.js to retri
 
 - Node.js
 - npm
-- API Key from [Weather API](https://weatherapi.com)
+- API Key from [Weather API](https://www.weatherapi.com)
 
 ## Instalasi
 
